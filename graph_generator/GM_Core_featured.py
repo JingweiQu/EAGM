@@ -9,9 +9,9 @@ from graph_nets import utils_tf
 import numpy as np
 import tensorflow as tf
 
-# from graph_generator import CMUHouse
-# from graph_generator import Willow
-# from graph_generator import PascalVOC as VOC
+from graph_generator import CMUHouse
+from graph_generator import Willow
+from graph_generator import PascalVOC as VOC
 
 install_graph_nets_library = "No"  #@param ["Yes", "No"]
 
@@ -136,20 +136,17 @@ def generate_featured_graphs(rand,
                              num_outlier_min_max,
                              use_train_set=True) :
     if dataset == "CMUHouse":
-        from graph_generator import CMUHouse
         graphs = CMUHouse.gen_random_graphs_CMU(rand,
                                                 batch_size,
                                                 num_inner_min_max,
                                                 num_outlier_min_max)
     elif dataset == "Willow":
-        from graph_generator import Willow
         graphs, _ = Willow.gen_random_graphs_Willow(rand,
                                                     batch_size,
                                                     num_inner_min_max,
                                                     num_outlier_min_max,
                                                     use_train_set=use_train_set)
     elif dataset == "PascalVOC":
-        from graph_generator import PascalVOC as VOC
         graphs, _ = VOC.gen_random_graphs_VOC(rand,
                                               batch_size,
                                               num_inner_min_max,

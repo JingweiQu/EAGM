@@ -11,7 +11,7 @@ from graph_generator import Willow
 from graph_generator import PascalVOC as VOC
 
 
-def load_trained_model(model_file, dataset, num_outlier_min_max):
+def load_trained_model(model_file, dataset):
     tf.compat.v1.reset_default_graph()
 
     # Model parameters.
@@ -22,6 +22,7 @@ def load_trained_model(model_file, dataset, num_outlier_min_max):
     # Input and target placeholders.
     batch_size_ge = 10
     num_inner_min_max = (10, 11)
+    num_outlier_min_max = (0, 1)
 
     seed = 0
     rand = np.random.RandomState(seed=seed)
@@ -194,7 +195,7 @@ def evaluate_Willow(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output
     print("cost_time = {:.4f}".format(cost_time))
 
 
-def evaluate_VOC(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge, num_outlier_min_max):
+def evaluate_VOC(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge):
     VOC_CATEGORIES = ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow",
                       "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train",
                       "tvmonitor"]
@@ -280,17 +281,14 @@ rand = np.random.RandomState(seed=seed)
 
 # Select dataset for evaluation
 dataset = args.dataset
+if dataset == 'Willow':
+    evaluate_fn = evaluate_Willow
+elif dataset == 'PascalVOC':
+    evaluate_fn = evaluate_VOC
+elif dataset == 'CMUHouse':
+    evaluate_fn = evaluate_CMUHouse
 
 model_file  = "trained_models/EAGM_{:s}".format(dataset)
 print('Load model: {}'.format(model_file))
-sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge = load_trained_model(model_file, dataset, num_outlier_min_max)
-
-if dataset == 'Willow':
-    evaluate_fn = evaluate_Willow
-    evaluate_Willow(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge)
-elif dataset == 'PascalVOC':
-    outlier = 0
-    num_outlier_min_max = (outlier, outlier + 1)
-    evaluate_VOC(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge, num_outlier_min_max)
-elif dataset == 'CMUHouse':
-    evaluate_CMUHouse(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge)
+sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge = load_trained_model(model_file, dataset)
+evaluate_fn(sess, input_ph, target_ph, loss_cof_ph, loss_cof2_ph, output_ops_ge)
