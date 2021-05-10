@@ -43,7 +43,6 @@ sh Train_dataset.sh
   title={Adaptive Edge Attention for Graph Matching with Outliers},
   author={Qu, Jingwei and Ling, Haibin and Zhang, Chenrui and Lyu, Xiaoqing and Tang, Zhi},
   booktitle={IJCAI},
-  year={2021},
-  organization={York}
+  year={2021}
 }
 ```
