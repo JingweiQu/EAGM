@@ -1,8 +1,8 @@
 # Adaptive Edge Attention for Graph Matching with Outliers
 
-![alt text](examples/aeroplane.png "Aeroplane matching example")  |   ![alt text](examples/cow.png "Cow matching example") | ![alt text](examples/train.png "Train matching example")    
+Aeroplane |  Cow  |  Train    
 :-------------------------:|:-------------------------:|:-------------------------:
-Aeroplane |  Cow  |  Train
+ ![alt text](examples/aeroplane.png "Aeroplane matching example")  |   ![alt text](examples/cow.png "Cow matching example") | ![alt text](examples/train.png "Train matching example")
 
 This repository is the implementation of the paper: 
 
