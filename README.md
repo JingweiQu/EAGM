@@ -6,7 +6,7 @@ Aeroplane |  Cow  |  Train
 
 This repository is the implementation of the paper: 
 
-Jingwei Qu, Haibin Ling, Chenrui Zhang, Xiaoqing Lyu, and Zhi Tang. Adaptive Edge Attention for Graph Matching with Outliers. *(IJCAI 2021)*
+Jingwei Qu, Haibin Ling, Chenrui Zhang, Xiaoqing Lyu, and Zhi Tang. [Adaptive Edge Attention for Graph Matching with Outliers](https://doi.org/10.24963/ijcai.2021/134). *(IJCAI 2021)*
 
 It contains the training and evaluation procedures for the three benchmarks in the paper:
 * Pascal VOC with Berkeley annotations
@@ -42,7 +42,9 @@ sh Train_dataset.sh
 @inproceedings{qu2021adaptive,
   title={Adaptive Edge Attention for Graph Matching with Outliers},
   author={Qu, Jingwei and Ling, Haibin and Zhang, Chenrui and Lyu, Xiaoqing and Tang, Zhi},
-  booktitle={IJCAI},
-  year={2021}
+  booktitle={Proceedings of 30th International Joint Conference on Artificial Intelligence},
+  pages={966--972},
+  year={2021},
+  url={https://doi.org/10.24963/ijcai.2021/134}
 }
 ```
