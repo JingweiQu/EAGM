@@ -42,9 +42,9 @@ sh Train_dataset.sh
 @inproceedings{qu2021adaptive,
   title={Adaptive Edge Attention for Graph Matching with Outliers},
   author={Qu, Jingwei and Ling, Haibin and Zhang, Chenrui and Lyu, Xiaoqing and Tang, Zhi},
-  booktitle={Proceedings of 30th International Joint Conference on Artificial Intelligence},
+  booktitle={Proceedings of the International Joint Conference on Artificial Intelligence},
   pages={966--972},
   year={2021},
-  url={https://doi.org/10.24963/ijcai.2021/134}
+  doi={10.24963/ijcai.2021/134}
 }
 ```
