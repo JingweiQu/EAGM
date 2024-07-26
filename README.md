@@ -15,7 +15,7 @@ It contains the training and evaluation procedures for the three benchmarks in t
 
 ## Requirements
 * **[Graph Nets](https://github.com/deepmind/graph_nets)** (TensorFlow 1 and Sonnet 1)
-* **[PyTorch](https://pytorch.org/get-started/locally/)** (>= 1.2.0)
+* **[TensorFlow](https://www.tensorflow.org/)** (>= 1.2.0)
 
 ## Dataset
 Download and prepare the datasets:
